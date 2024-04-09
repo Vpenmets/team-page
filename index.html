@@ -1,93 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .box {
+        width: calc(20% - 20px);
+        margin-bottom: 20px;
+        background-color: #f0f0f0;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    @media screen and (max-width: 768px) {
+        .box {
+            width: calc(40% - 20px);
         }
-        
-        .team-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
+    }
+    @media screen and (max-width: 480px) {
+        .box {
+            width: calc(100% - 20px);
         }
-
-        .team-member {
-            width: 200px;
-            height: 250px;
-            margin: 10px;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            overflow: hidden;
-            position: relative;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .team-member:hover {
-            transform: translateY(-5px);
-        }
-
-        .team-member img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
-
-        .member-name {
-            text-align: center;
-            padding: 10px;
-            background-color: #f0f0f0;
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
-    <div class="team-container" id="teamContainer"></div>
-
-    <script>
-        // Sample member data (you can replace this with actual member data)
-        const members = [
-            { name: "Member 1", photo: "https://via.placeholder.com/150" },
-            { name: "Member 2", photo: "https://via.placeholder.com/150" },
-            { name: "Member 3", photo: "https://via.placeholder.com/150" }
-            { name: "Member 4", photo: "https://via.placeholder.com/150" }
-            { name: "Member 5", photo: "https://via.placeholder.com/150" } 
-            // Add more members here
-        ];
-
-        // Function to create team member elements
-        function createTeamMember(member) {
-            const memberDiv = document.createElement("div");
-            memberDiv.classList.add("team-member");
-
-            const img = document.createElement("img");
-            img.src = member.photo;
-            img.alt = member.name + "'s photo";
-
-            const memberName = document.createElement("div");
-            memberName.classList.add("member-name");
-            memberName.textContent = member.name;
-
-            memberDiv.appendChild(img);
-            memberDiv.appendChild(memberName);
-
-            return memberDiv;
-        }
-
-        // Populate team members
-        const teamContainer = document.getElementById("teamContainer");
-        members.forEach(member => {
-            const memberElement = createTeamMember(member);
-            teamContainer.appendChild(memberElement);
-        });
-    </script>
+<div class="container">
+    <h1>Our Team</h1>
+    <div class="row">
+        <div class="box">
+            <h2>John Doe</h2>
+            <p>Position: CEO</p>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="box">
+            <h2>Jane Smith</h2>
+            <p>Position: CTO</p>
+            <p>Description: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="box">
+            <h2>Michael Johnson</h2>
+            <p>Position: COO</p>
+            <p>Description: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="box">
+            <h2>Emily Davis</h2>
+            <p>Position: CFO</p>
+            <p>Description: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+        <div class="box">
+            <h2>David Wilson</h2>
+            <p>Position: CMO</p>
+            <p>Description: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
